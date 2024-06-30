@@ -20,7 +20,26 @@ jobs:
         cache: 'npm'
     - name: Install dependencies
       run: npm install
-    - name: Execute unit tests
+    - name: Execute the unit tests
       run: npm run test:unit
     - name: Print username
       run: echo 'kristianch'
+
+  UI-test:
+
+    runs-on: ubuntu-latest
+    needs: build-and-unit-test
+    
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Install dependencies
+      run: npm install
+    - name: Start the application
+      run: npm run start
+    - name: Execute the UI tests
+      run: npm run test:ui
