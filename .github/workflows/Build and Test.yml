@@ -19,8 +19,8 @@ jobs:
         node-version: 20.x
         cache: 'npm'
     - name: Install dependencies
-    - run: npm install
+      run: npm install
     - name: Execute unit tests
-    - run: npm run test:unit
+      run: npm run test:unit
     - name: Print username
-    - run: echo 'kristianch'
+      run: echo 'kristianch'
