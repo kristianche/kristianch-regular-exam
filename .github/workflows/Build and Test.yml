@@ -40,6 +40,6 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Start the application
-      run: npm run start
+      run: npm run start &
     - name: Execute the UI tests
       run: npm run test:ui
